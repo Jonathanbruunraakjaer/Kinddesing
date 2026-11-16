@@ -1,0 +1,123 @@
+<header>
+  <a href="../pages/index.astro" class="logo">
+      <img src="/images/logo.webp" alt="kind design logo" />
+  </a>
+  <input type="checkbox" id="burger_toggle" />
+  <label for="burger_toggle" class="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/aboutus">About us</a>
+    <a href="/events">Events</a>
+  </nav>
+</header>
+<style>
+header img{
+  width: 60px;
+  height: auto;
+  display: block;
+  rotate: 280deg;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  position: relative;
+  background-color: white;
+  z-index: 10;
+}
+#burger_toggle {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  right: 1rem;
+  opacity: 0;
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 12;
+  
+}
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transition: 0.3s;
+  background-color: var(--pink);
+}
+nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: p_thin;
+  font-weight: 900;
+}
+nav a:hover{
+  color: var(--white);
+}
+#burger_toggle:checked ~ nav {
+  display: flex;
+  background-color: var(--pink);
+  border: 2px solid var(--white);
+  width: 140px;
+  font-family: p;
+}
+#burger_toggle:checked + .burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#burger_toggle:checked + .burger span:nth-child(2) {
+  opacity: 0;
+}
+#burger_toggle:checked + .burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (min-width: 768px) {
+  header {
+    padding: 1rem 3rem;
+  }
+  .burger {
+    display: none;
+  }
+  #burger_toggle {
+    display: none;
+  }
+  nav {
+    display: flex;
+    position: static;
+    width: auto;
+    padding: 0;
+    flex-direction: row;
+    gap: 2rem;
+    background: var(--white)
+  }
+  nav a {
+    font-size: 17px;
+    font-family: p_thin;
+    font-weight: 900;
+}
+nav a:hover{color: var(--pink);}
+}
+</style>
