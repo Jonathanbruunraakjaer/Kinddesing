@@ -1,0 +1,23 @@
+:root {
+  --blue: #c7e7f5;
+  --pink: #eb8bce;
+  --black: #000000;
+  --white: #ffffff;
+  --silver: #c0c0c0;
+  --silver-gradient: linear-gradient(110deg, #777777 0%, #d0d0d0 18%, #f8f8f8 32%, #a3a3a3 48%, #eaeaea 65%, #858585 82%, #d6d6d6 100%);
+}
+@font-face {
+  font-family: "p";
+  src: url("/public/Poppins-Light.woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "headline";
+  src: url("/public/Jua-Regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "p_thin";
+  src: url("/public/Poppins-Thin.woff2");
+  font-weight: 100;
+}

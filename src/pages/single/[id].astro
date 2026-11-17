@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+const endpoint = "https://zmuyycufsaccnnglqgtk.supabase.co/rest/v1/cards?"
+const key = "sb_publishable_KIieHJeXrPVxgDq2fXhwsw_FraY9I5I"
+
+
+  const options = {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const response = await fetch(endpoint, options);
+  const events: any[] = await response.json();
+
+  return events.map((event) => ({
+    params: { id: String(event.id) },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+
+const eventDate = new Date(event.date);
+
+const month = eventDate.toLocaleDateString("en-US", {
+  month: "short",
+}).toUpperCase();
+
+const day = eventDate.getUTCDate();
+---
+
+<Layout>
+  <main class="single-event-page">
+    <a href="/events" class="back-link">← Back to events</a>
+
+    <section class="single-event-card">
+      <div class="single-date">
+        <span class="month">{month}</span>
+        <span class="day">{day}</span>
+      </div>
+
+      <img src={event.Image} alt={event.title} class="single-image" />
+
+      <div class="single-info">
+        <h1>{event.title}</h1>
+        <p class="meta">{event.date}</p>
+        <p class="meta">{event.time}</p>
+        <p class="description">{event.description}</p>
+      </div>
+    </section>
+  </main>
+</Layout>
+<style>
+
+  .single-event-page {
+    padding: 20px 16px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+  }
+
+  .single-event-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: start;
+    column-gap: 12px;
+  }
+
+  .single-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .month {
+    font-size: 20px;
+    font-weight: 700;
+    width: 70px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+  }
+
+  .day {
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 8px;
+  }
+
+  .single-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -25px;
+  }
+
+  .single-info {
+    grid-column: 1 / -1;
+    background: #cfe8f3;
+    padding: 60px 18px 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .single-info h1 {
+    margin: 0 0 18px;
+    color: #f57ac3;
+    font-size: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .meta {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .description {
+    margin: 18px 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+    @media (min-width: 768px) {
+  .single-image {
+    width: 300px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -25px;
+    }}
+
+
+  /* DESKTOP
+  @media (min-width: 768px) {
+    .single-event-page {
+      padding: 40px 24px 100px;
+    }
+
+    .single-event-card {
+      grid-template-columns: 110px 380px 1fr;
+      align-items: start;
+      column-gap: 16px;
+    }
+
+    .single-date {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+      padding-top: 0;
+    }
+
+    .month,
+    .day {
+      font-size: 24px;
+    }
+
+    .single-image {
+      grid-column: 3;
+      grid-row: 1;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      align-self: center;
+      margin-bottom: 0;
+      position: static;
+    }
+
+    .single-info {
+      grid-column: 1 / -1;
+      padding: 90px 28px 30px;
+      min-height: 260px;
+    }
+
+    .single-info h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .meta {
+      font-size: 16px;
+    }
+
+    .description {
+      max-width: 700px;
+      font-size: 15px;
+    }
+  } */
+</style>

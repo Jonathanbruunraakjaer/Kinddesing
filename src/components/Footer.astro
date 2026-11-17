@@ -1,0 +1,91 @@
+
+<footer>
+  <section id="footer">
+    <h3>Informations</h3>
+    <div id="footer_grid">
+      <div>
+        <p>Sign up for our creative community</p>
+        <button class="button_footer">Sign up</button>
+      </div>
+      <div class="footer_links">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">PEATIX</a>
+        <a href="/aboutus">ABOUT US</a>
+        <a href="#">MEETUPS</a>
+        <a href="/events">EVENTS</a>
+        <a href="#">GALLERY</a>
+      </div>
+    </div>
+  </section>
+  <p id="copyright"><span>©</span>KINDDESIGN.CPH</p>
+</footer>
+<style>
+  footer {
+    background-color: var(--pink);
+     text-align: center;
+  }
+  #footer {
+    padding: 1rem 1rem 2rem;
+  }
+  footer h3 {
+    font-family: headline;
+    font-size: 30px;
+  }
+  footer p, a {
+    font-family: p;
+    font-size: 16px;
+  }
+  #footer_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer_links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: p;
+  }
+  a:hover {
+    color: var(--white);
+  }
+  #copyright {
+    color: var(--white);
+    font-size: 10px;
+    font-family: p_thin;
+    display: block;
+    text-align: left;
+  }
+  span {
+    font-family: p;
+    font-weight: 100;
+  }
+  @media (min-width: 768px) {
+    #footer {
+      padding: 0.4rem 1rem 3rem 2rem;
+      text-align: left;
+    }
+    footer h3 {
+      font-size: 33px;
+    }
+    footer p, a {
+      font-size: 22px;
+    }
+    #footer_grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+    .footer_links {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    a {
+      margin-bottom: 30px;
+    }
+    #copyright{ text-align: left;}
+  }
+</style>
