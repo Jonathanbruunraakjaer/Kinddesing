@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+
+	<layout />
+
+ <section class="about">
+      <div class="hero">
+        <img src="public/images/abouthero.webp" alt="KIND community">
+        <h1>ABOUT<br>US</h1>
+      </div>
+
+      <div class="intro">
+        <h2>BEHIND KIND</h2>
+        <p>
+          KIND DESIGN is a creative community
+          built around the idea that great things
+          happen when creative minds come together.
+        </p>
+        <p>
+          We bring designers, thinkers, makers
+          and curious people into the same space
+          to connect, exchange ideas and inspire
+          one another.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONNECTIONS -->
+    <section class="connections">
+      <span class="eyebrow">CONNECTIONS</span>
+      <img src="public/images/aboutgrid1.webp"
+           alt="Creative community gathering">
+      <img src="public/images/aboutgrid2.webp"
+           alt="Disco ball at an event">
+      <p class="photo-caption">GOOD VIBES</p>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events">
+      <span class="eyebrow">CREATIVITY</span>
+      <h2>WE'RE HOSTING<br>EVENTS</h2>
+      <p>
+        Our events are designed to bring creative
+        people together in ways that feel natural,
+        inspiring and genuinely enjoyable.
+      </p>
+      <a href="#" class="event-button">Events</a>
+
+      <img src="public/images/about2.webp"
+           alt="People enjoying a creative event">
+
+      <div class="blue-text">
+        <p>
+          We're here to make the creative world
+          feel more connected, more open and
+          a little less predictable.
+        </p>
+        <p>
+          We believe creativity grows when
+          people challenge each other, share
+          what they've learned and step
+          outside their usual circles.
+        </p>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="vision">
+      <span class="eyebrow">COMMUNITY</span>
+      <h2>OUR VISION</h2>
+      <p>
+        Our vision is to bring creative people
+        closer together in an industry where
+        so much of our work happens individually.
+      </p>
+      <p>
+        KIND DESIGN is about building a community
+        where knowledge moves freely, ideas are
+        exchanged openly and everyone has
+        something valuable to contribute.
+      </p>
+      <p>
+        Through talks, workshops, events and
+        everyday conversations, we aim to make
+        inspiration more accessible.
+      </p>
+      <img src="public/images/about3.webp"
+           alt="Members of KIND DESIGN">
+    </section>
+ </Layout>
+ <style>
+    img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1, h2 {
+  font-weight: 800;
+  line-height: 1.05;
+  font-family: 'headline', sans-serif;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* ABOUT */
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.hero img {
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.hero h1 {
+  color: var(--pink);
+  font-size: 50px
+  margin-top: 30px;
+  margin-left: -18px;
+  position: relative;
+}
+
+.intro {
+  padding: 55px 24px 45px;
+  text-align: center;
+}
+
+.intro h2 {
+  margin-bottom: 28px;
+}
+
+/* CONNECTIONS */
+
+.connections {
+  background: #c8e9f5;
+  padding-top: 10px;
+}
+
+.connections .eyebrow {
+  padding-left: 8px;
+}
+
+.connections img {
+  width: 100%;
+}
+
+.photo-caption {
+  text-align: right;
+  font-size: 10px;
+  margin: 0;
+  padding: 6px 10px;
+}
+
+/* EVENTS */
+
+.events {
+  padding-top: 40px;
+}
+
+.events > .eyebrow,
+.events > h2,
+.events > p {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.event-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 30px;
+  padding: 8px 25px;
+  border-radius: 30px;
+  background: #df82c4;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.events > img {
+  width: 100%;
+}
+
+.blue-text {
+  background: #c8e9f5;
+  padding: 25px 20px;
+}
+
+.blue-text p:nth-child(2) {
+  text-align: right;
+}
+
+/* VISION */
+
+.vision {
+  padding-top: 55px;
+}
+
+.vision .eyebrow,
+.vision h2,
+.vision p {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.vision h2 {
+  margin-bottom: 30px;
+}
+
+.vision p {
+  margin-bottom: 25px;
+}
+
+.vision img {
+  margin-top: 40px;
+}
+ </style>

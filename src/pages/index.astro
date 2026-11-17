@@ -1,7 +1,435 @@
+---
+import Layout from '../layouts/Layout.astro';
 
 ---
+<Layout>
+	<layout />
+
+	<section class="hero" >
+		<img src="public/images/herobillede_result.webp" alt="Kind Design community">
+		<h1>KIND DESIGN</h1>
+    </section>
+	<section class="content-section blue">
+
+        <div class="section-image">
+            <img src="public/images/eventsbillede_result.webp" alt="People at an event">
+        </div>
+
+        <div class="section-text">
+            <h2>EVENTS</h2>
+
+            <p>
+                Join our creative events, where designers
+                and curious minds come together to share
+                ideas, learn new skills and make connections.
+                From inspiring talks to workshops and
+                networking, there's something for everyone.
+            </p>
+
+            <a href="#" class="button">Read more</a>
+        </div>
+
+    </section>
+
+    <section class="content-section about" id="about">
+
+        <div class="section-text">
+            <h2>ABOUT US</h2>
+
+            <p>
+                Kind Design is a creative community
+                bringing people together through design.
+                We create a space for inspiration,
+                collaboration and new connections,
+                where everyone can share ideas
+                and grow together.
+            </p>
+
+           <a href="../aboutus" class="button">Read more</a> 
+        </div>
+
+        <div class="section-image">
+            <img src="public/images/omosbillede_result.webp" alt="Kind Design members">
+        </div>
+
+    </section>
+
+
+    <!-- PARTNERSHIPS -->
+    <section class="partnerships blue">
+
+        <h2>PARTNERSHIPS</h2>
+
+        <div class="partners">
+
+            <div class="partner">
+                <img src="public/images/UFFCIO_result.webp" alt="Ufficio">
+                <h3>UFFCIO</h3>
+            </div>
+
+            <div class="partner">
+                <img src="public/images/RASCAL_result.webp" alt="Rascal">
+                <h3>RASCAL</h3>
+            </div>
+
+            <div class="partner">
+                <img src="public/images/THEODORA_result.webp" alt="Theodora">
+                <h3>THEODORA</h3>
+            </div>
+
+        </div>
+
+        <p class="partnership-description">
+            Our partners help bring Kind Design to life.
+            Together, we create inspiring events, support
+            creative communities and bring people together
+            through design. Want to be part of it?
+            Let's make something great together!
+        </p>
+
+        <a href="#" class="button">Help us make it happen</a>
+
+    </section>
 import Layout from "../layouts/Layout.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout>
 </Layout>
+
+
+<style>
+		
+.button:hover {
+    background: #f3a5d9;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+	padding-bottom: 55px;
+	padding-top: 50px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+font-family: 'headline', sans-serif;
+    font-size: 90px;
+    color: var(--pink);
+    white-space: nowrap;
+    margin: 0;
+}
+
+
+
+/* SHARED SECTIONS */
+
+.content-section {
+    display: flex;
+    gap: 50px;
+	padding: 30px 30px;
+	
+}
+
+.blue {
+    background-color: var(--blue);
+
+}
+
+.section-image {
+    width: 50%;
+}
+
+.section-image img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.section-text {
+    width: 50%;
+}
+.section-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-text .button {
+    align-self: center;
+}
+h2 {
+    text-align: center;
+    font-size: 65px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+	font-family: 'headline', sans-serif;
+
+}
+
+.section-text p {
+    font-size: 30px;
+	align-content: center;
+    line-height: 1.5;
+    margin-bottom: 35px;
+	font-family: 'p_thin', sans-serif;
+	font-weight: 300;
+}
+
+
+
+/* ABOUT */
+
+.about {
+    background: white;
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.about .section-text {
+    padding: 0 10px;
+
+}
+
+.about .section-image img {
+     display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: center;
+}
+
+
+/* PARTNERSHIPS */
+
+.partnerships {
+    text-align: center;
+    padding: 35px 40px 45px;
+	font-size: 20px;
+	align-content: center;
+    line-height: 1.5;
+    margin-bottom: 35px;
+	font-family: 'p_thin', sans-serif;
+	font-weight: 600;
+	
+}
+
+.partnerships h2 {
+    margin-bottom: 25px;
+}
+
+.partners {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.partner {
+    width: 30%;
+}
+
+.partner img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.partner h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-top: 8px;
+	font-family: 'headline', sans-serif;
+	font-weight: 50;
+}
+
+.partnership-description {
+   text-align: left;
+   padding-left: 15px;
+	font-size: 25px;
+	align-content: center;
+    line-height: 1.5;
+    margin-bottom: 30px;
+	font-family: 'p_thin', sans-serif;
+	font-weight: 600;
+}
+.button {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--black);
+    text-decoration: none;
+
+    padding: 20px 40px ;
+    border-radius: 30px;
+    border: 6px solid var(--silver);
+font-family: 'p', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.3s;
+	
+}
+
+@media screen and (max-width: 600px) {
+
+    .hero {
+        max-width: 100%;
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+
+    .hero img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+
+    
+
+    .content-section {
+        
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px 20px;
+    }
+
+    .section-image {
+        width: 100%;
+    }
+
+    .section-image img {
+        max-width: 100%;
+        height: 80%;
+        object-fit: cover;
+		align: center;
+    }
+
+    .section-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-text h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .section-text p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .section-text .button {
+        align-self: center;
+    }
+
+
+   
+
+    .about {
+        padding: 30px 20px;
+    }
+
+    .about .section-text {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about .section-image {
+        width: 100%;
+		height: 80%;
+    }
+
+    .about .section-image img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+    }
+
+
+  
+
+    .partnerships {
+        padding: 30px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .partnerships h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .partner {
+        width: 80%;
+    }
+
+    .partner img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .partner h3 {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .partnership-description {
+        text-align: left;
+        padding-left: 0;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border-width: 4px;
+        max-width: 100%;
+    }
+
+    .button:hover {
+        background: #f3a5d9;
+    }
+
+   
+
+    h2 {
+        font-size: 40px;
+    }
+
+}
+</style>
