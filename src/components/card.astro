@@ -1,0 +1,217 @@
+---
+const { event } = Astro.props;
+---
+<a href={`/single/${event.id}`}>
+  <article class="event-card">
+<div class="event-date">
+  <span class="month">
+    {new Date(event.date).toLocaleDateString("en-US", {
+      month: "short"
+    }).toUpperCase()}
+  </span>
+
+  <span class="day">
+    {new Date(event.date).getUTCDate()}
+  </span>
+</div>
+
+  <img src={event.Image} alt={event.title} />
+
+  <div class="event-info">
+    <h2>{event.title}</h2>
+    <p>{event.date}</p>
+    <p>{event.time}</p>
+  </div>
+</article>
+</a>
+
+<style>
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .event-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+  }
+
+  .event-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .month {
+    font-size: 16px;
+    font-weight: bold;
+    width: 60px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+  }
+
+  .day {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 8px;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: -25px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .event-info {
+    grid-column: 1 / -1;
+    background-color: #c7e8f6;
+    padding: 60px 15px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .event-info h2 {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #f46ab8;
+    margin: 0 0 10px;
+  }
+
+  .event-info p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.event-card {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+a:hover .event-card {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.12));
+}
+
+a:focus-visible .event-card {
+  outline: 2px solid #f46ab8;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-card {
+    transition: none;
+  }
+}
+
+
+  /* COMPUTER */
+
+  @media (min-width: 768px) {
+    .event-card {
+      grid-template-columns: 110px 1.4fr 1fr;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .event-card img {
+      height: 300px;
+    }
+
+    .event-info {
+      grid-column: auto;
+      height: 300px;
+      padding: 25px;
+    }
+
+    .event-info h2 {
+      font-size: 22px;
+    }
+
+    .event-info p {
+      font-size: 12px;
+    }
+
+    .month,
+    .day {
+      font-size: 20px;
+    }
+  }
+
+@media (min-width: 768px) {
+
+  .event-card {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .event-date {
+    grid-column: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .month,
+  .day {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .event-card img {
+    grid-column: 2;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 0;
+    position: static;
+  }
+
+  .event-info {
+    grid-column: 3;
+    background-color: #c7e8f6;
+    height: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .event-info h2 {
+    color: #f46ab8;
+    font-size: 32px;
+    margin: 0 0 20px;
+  }
+
+  .event-info p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+</style>
+
