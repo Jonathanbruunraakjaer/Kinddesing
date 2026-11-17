@@ -36,6 +36,7 @@ header {
   height: 44px;
   right: 1rem;
   opacity: 0;
+  z-index: 99999;
 }
 .burger {
   display: flex;
@@ -46,7 +47,6 @@ header {
   height: 44px;
   cursor: pointer;
   z-index: 12;
-  
 }
 .burger span {
   display: block;
@@ -84,6 +84,7 @@ nav a:hover{
   border: 2px solid var(--white);
   width: 140px;
   font-family: p;
+  z-index: 99999;
 }
 #burger_toggle:checked + .burger span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
